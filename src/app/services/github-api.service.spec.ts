@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { GithubApiService } from './github-api.service';
 import { FAKE_TOKEN } from './../../environments/environment.test';
+import { buildGithubApiUrl } from './github-api.model';
 
 function buildMockGithubApiResponse(username: string, type: string) {
   return [
@@ -65,7 +66,7 @@ describe('GithubApiService', () => {
     });
 
     const req = httpMock.expectOne(
-      `${service.getUserRepoUrl(sampleUser)}?access_token=${FAKE_TOKEN}`
+      `${buildGithubApiUrl(sampleUser, 'User')}?access_token=${FAKE_TOKEN}`
     );
     expect(req.request.method).toBe('GET');
     expect(req.request.params.get('access_token')).toBe(FAKE_TOKEN);
@@ -82,7 +83,7 @@ describe('GithubApiService', () => {
     });
 
     const req = httpMock.expectOne(
-      `${service.getOrgRepoUrl(sampleOrg)}?access_token=${FAKE_TOKEN}`
+      `${buildGithubApiUrl(sampleOrg, 'Organization')}?access_token=${FAKE_TOKEN}`
     );
     expect(req.request.method).toBe('GET');
     expect(req.request.params.get('access_token')).toBe(FAKE_TOKEN);
