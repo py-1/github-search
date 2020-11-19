@@ -7,15 +7,14 @@ A simple Github search UI that gets user/organization repositories and ranks by 
 
 After cloning the repo:
 
-$ npm install
-$ npm start
-
-Visit `http://localhost:4200`
+- `$ npm install`
+- `$ npm start`
+- Visit `http://localhost:4200`
 
 
 ## Tests
 
-$ npm test
+- `$ npm test`
 
 
 ## MVP
