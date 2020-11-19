@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { GithubApiService } from './services/github-api.service';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -29,25 +32,25 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  })
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it('should have a search input value stored as inputValue', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     const testInput = 'hello world';
 
-    expect(app.inputValue).toBe('');
-    app.inputValue = testInput;
-    expect(app.inputValue).toBe(testInput);
+    expect(component.inputValue).toBe('');
+    component.inputValue = testInput;
+    expect(component.inputValue).toBe(testInput);
   });
 
   it('should render a search bar', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.search-input')).toBeTruthy();
   });

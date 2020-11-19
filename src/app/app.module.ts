@@ -5,14 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GithubApiService } from './services/github-api.service';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { GithubApiService } from './services/github-api.service';
     HttpClientModule,
     MatIconModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule
   ],
   providers: [
     GithubApiService

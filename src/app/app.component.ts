@@ -12,10 +12,11 @@ export class AppComponent {
   inputValue = '';
   entityType: EntityType = 'Organization';
   entityTypes: Array<EntityType> = ['Organization', 'User'];
+  repositories: Array<any>;
 
   constructor(private githubApiService: GithubApiService) { }
 
-  search() {
+  search(): void {
     const input = this.inputValue.trim();
     let method;
 
@@ -26,8 +27,13 @@ export class AppComponent {
     }
 
     this.githubApiService[method](input).subscribe(
-      res => console.log(`response: ${JSON.stringify(res)}`),
-      err => console.log(`error: ${JSON.stringify(err)}`)
+      res => {
+        this.repositories = res;
+      },
+      err => {
+        console.log(`error: ${JSON.stringify(err)}`);
+        this.repositories = [];
+      }
     )
   }
 
