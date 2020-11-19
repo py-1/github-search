@@ -8,6 +8,13 @@ A simple Github search UI that gets user/organization repositories and ranks by 
 After cloning the repo:
 
 - `$ npm install`
+- Create a "secrets.js" file at project root. Add the following:
+  ```
+    export const SECRETS = {
+      GITHUB_ACCESS_TOKEN: "xxxx"
+    };
+  ```
+  To get a Github access token, follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
 - `$ npm start`
 - Visit `http://localhost:4200`
 
@@ -33,3 +40,4 @@ After cloning the repo:
 * [ ] Deploy to Heroku or S3
 * [ ] Add circle ci
 * [ ] Look into a lookahead library or see if Github API has a search ability.
+* [ ] Bash script for generating secrets.js
