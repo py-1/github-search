@@ -1,27 +1,36 @@
-# GithubSearch
+# Github Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+A simple Github search UI that gets user/organization repositories and ranks by stars.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+After cloning the repo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+$ npm install
+$ npm start
 
-## Build
+Visit `http://localhost:4200`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+$ npm test
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## MVP
 
-## Further help
+* [ ] Get list of repositories for a user.
+* [ ] Get list of repositories for an organization.
+* [ ] Add UI input/search bar. Give user option to select user or organization.
+* [ ] On submit, list repositories ordered by most likes at top.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Stretch Goals
+
+* [ ] Add additional options to display to user for each repository listed. Maybe add a max limit?
+* [ ] Add endless scroll or pagination.
+* [ ] Add past searches. Possibly cache results. Keep 5 most recent.
+* [ ] Deploy to Heroku or S3
+* [ ] Add circle ci
+* [ ] Look into a lookahead library or see if Github API has a search ability.
