@@ -26,7 +26,7 @@ After cloning the repo:
 
 ## MVP
 
-* [ ] Get list of repositories for a user.
+* [x] Get list of repositories for a user.
 * [ ] Get list of repositories for an organization.
 * [ ] Add UI input/search bar. Give user option to select user or organization.
 * [ ] On submit, list repositories ordered by most likes at top.
